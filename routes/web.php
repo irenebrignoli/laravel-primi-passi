@@ -14,5 +14,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+
+    $data =[
+        'title' => 'My favourite cakes: ',
+        'cakes' => [
+            'Apple Pie',
+            'Brownies Cake',
+            'Cheesecake',
+            'Cream Tart',
+            'Muffin'
+        ]
+    ];
+
+
+    return view('home', $data);
+
+})->name('home');
+
+
+Route::get('shops', function () {
+
+    $data = [
+        'title' => 'Locations: ',
+        'shops' =>[
+            'London',
+            'York',
+            'Belfast',
+            'Galway'
+        ]
+    ];
+
+    return view('shops', $data);
+
+})->name('shops');
